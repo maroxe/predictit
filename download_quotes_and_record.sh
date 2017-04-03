@@ -1,7 +1,9 @@
-url='https://www.predictit.org/api/marketdata/category/13'
+url='https://www.predictit.org/api/marketdata/all'
+DATE=`date +%Y-%m-%d`
 
 echo "Downloading..."
 wget $url -O data.xml
 
 echo "Recording..."
-python record_quotes.py
+python record_quotes.py data/predictitquote.$DATE.sqlite3
+
